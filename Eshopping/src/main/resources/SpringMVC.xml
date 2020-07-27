@@ -6,15 +6,15 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        https://www.springframework.org/schema/context/spring-context.xsd">
 <context:component-scan base-package="com.newshopping.controller"></context:component-scan>
 	
-	<mvc:annotation-diven />
+	<mvc:annotation-driven />
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<porperty name="prefix" value="WEB-INF"></porperty>
-		<porperty name="suffix" value=".jsp"></porperty>
+		<property name="prefix" value="WEB-INF/"></property>
+		<property name="suffix" value=".jsp"></property>
 	</bean>
 </beans>
