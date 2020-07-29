@@ -1,5 +1,9 @@
 package com.newshopping.dao;
 
-public interface IUserDao {
+import java.util.List;
 
+import com.newshopping.entity.User;
+
+public interface IUserDao {
+    List<User> queryAllUser();
 }
