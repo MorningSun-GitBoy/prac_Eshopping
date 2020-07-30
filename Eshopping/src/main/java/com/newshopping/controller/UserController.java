@@ -7,4 +7,5 @@ import com.newshopping.service.IUserService;
 public class UserController {
     @Autowired
     private IUserService userService;
+    
 }
