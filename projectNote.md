@@ -94,3 +94,19 @@
 ```
 * Maven项目的配置
 * * pom.xml
+```
+    首行写好<project>标签，在其中配置约束，一般包括xsi和xsi:schemaLocation
+    下一行标注maven的版本
+```
+* * 其次开始配置项目所需的各种配置文件
+## SSM 框架
+* 组合：SpringMVC + Spring + Mybatis
+* 项目层次：
+* * Controller
+* * Service
+* * Dao
+```
+    Controller作为servlet的替代，控制和前端的交互，以及整个后端的运行
+    Service作为解耦的中间层，控制Dao完成相应的数据操作
+    Dao层作为数据层保留整个数据，并由框架帮助完成与数据库的交互
+```

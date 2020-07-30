@@ -94,3 +94,19 @@ type "mvn -version" in cmd or Powershell to ensure if it is installed
 ```
 * Maven Project Configure
 * * pom.xml
+```
+    write label <project> on the first line,configure condition and constraint,usually include xsi and xsi:schemaLocation
+    pronounce the version of maven
+```
+* * then configure other configuration file the project needs
+## SSM frameworke
+* component：SpringMVC + Spring + Mybatis
+* project deliver：
+* * Controller
+* * Service
+* * Dao
+```
+    Controller as a substitute of servlet,controle the interactive in web and the whole back-end running.
+    Service as a middelware to decoupl, controle Dao to complete the relative data operations.
+    Dao as the data level to keep the data,finish to operate data and database
+```
