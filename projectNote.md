@@ -95,7 +95,7 @@
 * Maven项目的配置
 * * pom.xml
 ```
-    首行写好<project>标签，在其中配置约束，一般包括xsi和xsi:schemaLocation
+    首行写好<project>标签，在其中配置约束，一般包括xsi和xsi:schemaLocation，网址：https://maven.apache.org/configure.html中有约束的标准配置。
     下一行标注maven的版本
 ```
 * * 其次开始配置项目所需的各种配置文件

@@ -95,7 +95,7 @@ type "mvn -version" in cmd or Powershell to ensure if it is installed
 * Maven Project Configure
 * * pom.xml
 ```
-    write label <project> on the first line,configure condition and constraint,usually include xsi and xsi:schemaLocation
+    write label <project> on the first line,configure condition and constraint,usually include xsi and xsi:schemaLocation.There is a standard condition and constraint configure in website:https://maven.apache.org/configure.html
     pronounce the version of maven
 ```
 * * then configure other configuration file the project needs
