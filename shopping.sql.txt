@@ -1,8 +1,21 @@
-﻿
-
+-- ----------------------------
+-- Navicat MySQL Data Transfer
+--
+-- Source Server         : 20190424
+-- Source Server Version : 50717
+-- Source Host           : 192.168.5.133:3307
+-- Source Database       : demo
+--
+-- Target Server Type    : MYSQL
+-- Target Server Version : 50717
+-- File Encoding         : 65001
+-- 
+-- Date: 2019-11-26 20:11:39
+-- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
-
-
+-- ----------------------------
+-- Table structure for eshopping_cart
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_cart`;
 CREATE TABLE `eshopping_cart` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '购物车id',
@@ -16,9 +29,12 @@ CREATE TABLE `eshopping_cart` (
   KEY `user_id_index` (`user_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-
-
+-- ----------------------------
+-- Records of eshopping_cart
+-- ----------------------------
+-- ----------------------------
+-- Table structure for eshopping_category
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_category`;
 CREATE TABLE `eshopping_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '类别id',
@@ -31,7 +47,9 @@ CREATE TABLE `eshopping_category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_category
+-- ----------------------------
 INSERT INTO `eshopping_category` VALUES ('1', '0', '家用电器', '1', '2019-06-24 14:12:17', '2019-11-26 11:33:13', '1');
 INSERT INTO `eshopping_category` VALUES ('2', '0', '移动电话', '1', '2019-06-24 14:12:34', '2019-11-26 11:29:21', '1');
 INSERT INTO `eshopping_category` VALUES ('3', '0', '电脑', '1', '2019-06-24 14:12:48', '2019-06-24 14:12:50', '1');
@@ -39,7 +57,9 @@ INSERT INTO `eshopping_category` VALUES ('4', '1', '电视', '1', '2019-06-24 14
 INSERT INTO `eshopping_category` VALUES ('5', '4', '超薄电视', '1', '2019-06-24 14:14:07', '2019-06-24 14:14:09', '0');
 INSERT INTO `eshopping_category` VALUES ('7', '4', '全面屏电视', '1', '2019-06-24 16:11:34', '2019-06-24 16:11:34', '0');
 
-
+-- ----------------------------
+-- Table structure for eshopping_order
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_order`;
 CREATE TABLE `eshopping_order` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id,主键',
@@ -60,13 +80,17 @@ CREATE TABLE `eshopping_order` (
   UNIQUE KEY `order_no_index` (`order_no`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_order
+-- ----------------------------
 INSERT INTO `eshopping_order` VALUES ('1', '1562226413272', '2', '2000.00', '1', '0', '1', '0', null, null, null, null, '2019-07-04 15:46:49', null);
 INSERT INTO `eshopping_order` VALUES ('2', '1562226633094', '2', '100.00', '1', '10', '1', '0', null, null, null, null, '2019-07-04 15:48:53', null);
 INSERT INTO `eshopping_order` VALUES ('3', '1562226733361', '2', '50000.00', '1', '20', '1', '0', '2019-07-09 10:04:31', null, null, null, '2019-07-04 15:50:53', null);
 INSERT INTO `eshopping_order` VALUES ('4', '1562226823047', '3', '50602000.00', '1', '10', '1', '0', null, null, null, null, '2019-07-04 15:52:04', null);
 
-
+-- ----------------------------
+-- Table structure for eshopping_order_item
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_order_item`;
 CREATE TABLE `eshopping_order_item` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单明细id,主键',
@@ -85,12 +109,16 @@ CREATE TABLE `eshopping_order_item` (
   KEY `order_no_user_id_index` (`order_no`,`user_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_order_item
+-- ----------------------------
 INSERT INTO `eshopping_order_item` VALUES ('1', '1562226823047', '1', '1', '奥迪', '1.jpg', '100000.00', '6', '600000.00', '2019-07-04 15:52:04', '2019-07-04 15:52:04');
 INSERT INTO `eshopping_order_item` VALUES ('2', '1562226823047', '1', '2', '红旗', '5.jpg', '5000000.00', '10', '50000000.00', '2019-07-04 15:52:04', '2019-07-04 15:52:04');
 INSERT INTO `eshopping_order_item` VALUES ('3', '1562226823047', '1', '5', '奥拓', '8.jpg', '2000.00', '1', '2000.00', '2019-07-04 15:52:04', '2019-07-04 15:52:04');
 
-
+-- ----------------------------
+-- Table structure for eshopping_payinfo
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_payinfo`;
 CREATE TABLE `eshopping_payinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -104,10 +132,14 @@ CREATE TABLE `eshopping_payinfo` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_payinfo
+-- ----------------------------
 INSERT INTO `eshopping_payinfo` VALUES ('1', '1562226733361', '1', '1', 'TRADE_SUCCESS', '2019070922001447981000054512', '2019-07-09 13:13:50', null);
 
-
+-- ----------------------------
+-- Table structure for eshopping_product
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_product`;
 CREATE TABLE `eshopping_product` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品id',
@@ -126,7 +158,9 @@ CREATE TABLE `eshopping_product` (
   KEY `name_index` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_product
+-- ----------------------------
 INSERT INTO `eshopping_product` VALUES ('1', '1', '奥迪', '真便宜', '真酷', '1.jpg', '1.jpg,2.jpg', '100000.00', '94', '1', '2019-06-26 09:59:49', '2019-07-04 15:52:04');
 INSERT INTO `eshopping_product` VALUES ('2', '2', '红旗', '太帅了', '你买不起', '5.jpg', '1.jpg,2.jpg', '5000000.00', '9990', '2', '2019-06-27 09:31:43', '2019-07-04 15:52:04');
 INSERT INTO `eshopping_product` VALUES ('3', '3', '五菱', '真结实', '满大街跑', '6.jpg', '1.jpg,2.jpg', '10000.00', '100', '1', '2019-06-27 09:32:32', '2019-06-27 09:32:34');
@@ -145,7 +179,9 @@ INSERT INTO `eshopping_product` VALUES ('16', '1', '妈妈我想吃烤山药', '
 INSERT INTO `eshopping_product` VALUES ('17', '2', '跨6出金币', '1：65出', '需要的联系', '1570606973193跨6出金币584.jpg', null, '9999999999999999.99', '1', '1', '2019-10-09 15:42:53', '2019-10-09 15:42:53');
 INSERT INTO `eshopping_product` VALUES ('18', '6324', '孙笑川', '人人都4孙笑川', '@带带大师兄', '1570608184235孙笑川134.jpg', null, '99.10', '1', '2', '2019-10-09 16:03:04', '2019-10-09 16:03:04');
 
-
+-- ----------------------------
+-- Table structure for eshopping_shipping
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_shipping`;
 CREATE TABLE `eshopping_shipping` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -163,13 +199,17 @@ CREATE TABLE `eshopping_shipping` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_shipping
+-- ----------------------------
 INSERT INTO `eshopping_shipping` VALUES ('1', '1', '白展堂', '0225987456', '18888888888', '天津', '天津', '空港', '西七道', '300000', '2019-07-03 09:30:49', '2019-07-03 09:30:49');
 INSERT INTO `eshopping_shipping` VALUES ('2', '1', '铜掌柜', '0225987456', '18888888889', '天津', '天津', '空港', '西七道同福客栈', '300000', '2019-07-03 09:31:30', '2019-07-03 09:31:30');
 INSERT INTO `eshopping_shipping` VALUES ('3', '1', '郭芙蓉', '0225987456', '18888888889', '天津', '天津', '空港', '西七道同福客栈', '300000', '2019-07-03 09:33:32', '2019-07-03 09:33:32');
 INSERT INTO `eshopping_shipping` VALUES ('4', '1', '吕秀才', '0225987456', '18888888889', '天津', '天津', '空港', '西七道同福客栈', '300000', '2019-07-03 09:33:45', '2019-07-03 09:33:45');
 
-
+-- ----------------------------
+-- Table structure for eshopping_user
+-- ----------------------------
 DROP TABLE IF EXISTS `eshopping_user`;
 CREATE TABLE `eshopping_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
@@ -186,7 +226,9 @@ CREATE TABLE `eshopping_user` (
   UNIQUE KEY `user_name_index` (`username`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
-
+-- ----------------------------
+-- Records of eshopping_user
+-- ----------------------------
 INSERT INTO `eshopping_user` VALUES ('2', '李四', '123456', '2121@qq.com', 'sdadasasd', 'dsaasdsd', 'sdaasdads', '0', '2019-06-21 10:03:36', '2019-06-21 10:03:36');
 INSERT INTO `eshopping_user` VALUES ('3', '赵六', 'E10ADC3949BA59ABBE56E057F20F883E', '2121212@qq.com', 'sdadasasd', 'dsaasdsd', 'sdaasdads', '0', '2019-06-21 10:24:53', '2019-06-21 10:24:53');
 INSERT INTO `eshopping_user` VALUES ('4', 'xiaoming', '123456', '123@qq.com', '18258888888', '你的家乡在哪', '黑龙江', '0', '2019-10-14 15:03:00', '2019-10-14 15:03:00');
