@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 //使用此注解可以在SpringMVC中被扫描到
 public class TestCon {
-    @RequestMapping("/test.do")
+    @RequestMapping("/test")
     public String test() {
+	System.out.println("test,正常运行");
 	return "test";//返回的字符串是页面的名字
     }
 }

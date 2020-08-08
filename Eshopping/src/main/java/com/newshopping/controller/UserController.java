@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
     
-    @RequestMapping("/users.do")
+    @RequestMapping("/users")
     public List<User> queryAll() {
 	List<User> queryList = userService.queryAllUsers();
 	System.out.println(queryList);
