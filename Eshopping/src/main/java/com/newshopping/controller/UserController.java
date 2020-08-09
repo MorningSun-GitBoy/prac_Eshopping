@@ -15,8 +15,9 @@ public class UserController {
     @Autowired
     private IUserService userService;
     
-    @RequestMapping("/users")
+    @RequestMapping("/users.do")
     public List<User> queryAll() {
+	System.out.println("users.do访问正常");
 	List<User> queryList = userService.queryAllUsers();
 	System.out.println(queryList);
 	return queryList;

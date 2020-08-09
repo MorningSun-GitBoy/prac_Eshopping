@@ -4,6 +4,6 @@ import java.util.List;
 
 import com.newshopping.entity.User;
 
-public interface IUserDao {
+public interface UserDao {
     List<User> queryAllUser();
 }
